@@ -1,13 +1,17 @@
+const users = require("../utilities/userData.json");
+
 module.exports.getAllUsers = (req, res) => {
-    res.send("all user found.");
+    const { limit } = req.query;
+    res.send(users.slice(0, limit));
 };
 
 module.exports.getRandomUser = (req, res) => {
-    res.send("all user found.");
+
 };
 
 module.exports.postUser = (req, res) => {
-    res.send("all user found.");
+    users.push(req.body);
+    res.send(users);
 };
 
 module.exports.patchUser = (req, res) => {

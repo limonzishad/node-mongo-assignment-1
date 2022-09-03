@@ -8,10 +8,10 @@ router.route("/random").get(userController.getRandomUser);
 
 router.route("/save").post(userController.postUser);
 
-router.route("/update").patch(userController.patchUser);
+router.route("/update/:id").patch(userController.patchUser);
 
 router.route("/bulk-update").patch(userController.patchBulkUser);
 
-router.route("/delete").delete(userController.deleteUser);
+router.route("/delete/:id").delete(userController.deleteUser);
 
 module.exports = router;
